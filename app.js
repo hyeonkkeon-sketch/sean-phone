@@ -66,7 +66,9 @@ o._iv=setInterval(()=>{s++;f()},1000);
 $('#fm',o).onclick=()=>{const mu=!((v&&v.muted)||(v2&&v2.muted));[v,v2].forEach(x=>{if(x)x.muted=mu});$('#fm',o).innerHTML=SPK(mu)};
 $('#ff',o).onclick=()=>{const p=$('#pip',o);p.style.transform=p.style.transform?'':'scaleX(-1)'};
 $('#fe',o).onclick=fend}
-function fend(){const o=$('#ic');if(o.style.display!='flex')return;clearInterval(o._iv);const v=o._v,v2=o._v2;if(v2){v2.pause();v2.removeAttribute('src');v2.remove()}if(v){v.onended=null;v.pause();v.removeAttribute('src');v.remove()}o._v=o._v2=null;o.style.display='none';o.innerHTML='';RC.unshift(['mbul','in','Baru saja']);endTone();sb(cur&&!DK.includes(cur))}
+function fend(){const o=$('#ic');if(o.style.display!='flex')return;clearInterval(o._iv);const v=o._v,v2=o._v2;if(v2){v2.pause();v2.removeAttribute('src');v2.remove()}if(v){v.onended=null;v.pause();v.removeAttribute('src');v.remove()}o._v=o._v2=null;o.style.display='none';o.innerHTML='';RC.unshift(['mbul','in','Baru saja']);endTone();sb(cur&&!DK.includes(cur));if(!window._aft){window._aft=1;AFTER_VC.forEach(x=>setTimeout(()=>incoming(x[1]),x[0]*1000))}}
+/* chat dari mbul setelah vidcall selesai: [detik setelah vc, isi chat] */
+const AFTER_VC=[[3,'yah kok udahan sih bang'],[6,'yaudah aku tunggu di fore yaa'],[9,'cepet yaa abangg']];
 $('#bn').onclick=openMbul;
 function ownLogin(){const c=prompt('Kode pemilik:');if(c==null)return;if(hs(c)==OH){OWN=true;store.s('own',OH);document.body.classList.add('own');toast('Mode pemilik aktif');A._ab&&A._ab()}else toast('Kode salah')}
 function outOwn(){OWN=false;store.s('own','');document.body.classList.remove('own');toast('Keluar mode pemilik');A._ab&&A._ab()}
